@@ -1,5 +1,4 @@
-// src/components/Inbox.tsx
-"use client";
+'use client';
 import React from 'react';
 import '../styles/Inbox.css';
 
