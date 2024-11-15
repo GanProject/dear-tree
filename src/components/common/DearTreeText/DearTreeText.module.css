@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'mountains of christmas';
+  src: url('/fonts/MountainsofChristmas-Regular.ttf') format('truetype');
+}
+
+.dearTree {
+  font-family: 'mountains of christmas';
+  font-size: 48px;
+  margin: 0;
+  color: #333;
+}

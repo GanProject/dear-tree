@@ -1,9 +1,4 @@
 @font-face {
-  font-family: 'mountains of christmas';
-  src: url('../../public/fonts/MountainsofChristmas-Regular.ttf')
-    format('truetype');
-}
-@font-face {
   font-family: 'nanum junghagsaeng';
   src: url('../../public/fonts/nanum-junghagsaeng.ttf') format('truetype');
 }
@@ -53,13 +48,6 @@
   padding: 10px 0 50px 0;
 
   background-color: #ffe1b3;
-}
-
-.mainHeading {
-  font-family: 'mountains of christmas';
-  font-size: 48px;
-  margin: 0;
-  color: #333;
 }
 
 .button {
