@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'mountains of christmas';
+  src: url('../../public/fonts/MountainsofChristmas-Regular.ttf')
+    format('truetype');
+}
+
+@font-face {
+  font-family: 'nanum junghagsaeng';
+  src: url('../../public/fonts/nanum-junghagsaeng.ttf') format('truetype');
+}
+
 .initContainer {
   display: flex;
   flex-direction: column;
@@ -22,22 +33,29 @@
 }
 
 .mainHeading {
-  font-size: 32px;
+  font-family: 'mountains of christmas';
+  font-size: 48px;
+  margin: 0;
   color: #333;
+
+  margin-top: 100%;
 }
 
 .button {
-  padding: 10px 20px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #0070f3;
+  width: 250px;
+  padding: 5px 10px;
+  font-family: 'nanum junghagsaeng';
+  font-size: 28px;
+  color: #000;
+  background-color: #ffe6c4;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   text-decoration: none;
+  box-shadow: 5px 5px 5px rgba(35, 34, 34, 0.192);
 }
 
 .button:hover {
-  background-color: #005bb5;
+  background-color: #ffe0b8;
 }

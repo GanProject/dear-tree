@@ -1,5 +1,7 @@
-// src/components/RoomDetail.tsx
-"use client";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+// 배포 때문에 추가한 코드입니다. 지우지 마세요.
+
+'use client';
 import React, { useState } from 'react';
 import '../styles/RoomDetail.css';
 
@@ -14,7 +16,10 @@ type RoomDetailProps = {
   initialParticipants: number;
 };
 
-const RoomDetail: React.FC<RoomDetailProps> = ({ roomId, initialParticipants }) => {
+const RoomDetail: React.FC<RoomDetailProps> = ({
+  roomId,
+  initialParticipants,
+}) => {
   const [participants, setParticipants] = useState(initialParticipants);
   const [inviteLink, setInviteLink] = useState('');
   const [progress, setProgress] = useState(0);
@@ -49,20 +54,31 @@ const RoomDetail: React.FC<RoomDetailProps> = ({ roomId, initialParticipants }) 
         <span className="room-icon">📧</span>
         <span className="room-title">방 제목</span>
         <span className="room-participants">{participants} 인원</span>
-        <button onClick={generateInviteLink} className="invite-button">초대</button>
+        <button onClick={generateInviteLink} className="invite-button">
+          초대
+        </button>
       </div>
 
       {inviteLink && (
         <div className="invite-link">
           <input type="text" value={inviteLink} readOnly />
           <button onClick={copyInviteLink}>복사하기</button>
-          <button onClick={() => alert('카카오톡으로 공유')} className="kakao-share-button">카카오톡으로 공유하기</button>
+          <button
+            onClick={() => alert('카카오톡으로 공유')}
+            className="kakao-share-button"
+          >
+            카카오톡으로 공유하기
+          </button>
         </div>
       )}
 
       <div className="letters-section">
         {letters.map((letter) => (
-          <div key={letter.id} className="letter-item" onClick={() => setSelectedLetter(letter)}>
+          <div
+            key={letter.id}
+            className="letter-item"
+            onClick={() => setSelectedLetter(letter)}
+          >
             📩
           </div>
         ))}
@@ -73,7 +89,12 @@ const RoomDetail: React.FC<RoomDetailProps> = ({ roomId, initialParticipants }) 
           <div className="letter-content">
             <h3>From. {selectedLetter.from}</h3>
             <p>{selectedLetter.content}</p>
-            <button onClick={() => setSelectedLetter(null)} className="close-popup-button">닫기</button>
+            <button
+              onClick={() => setSelectedLetter(null)}
+              className="close-popup-button"
+            >
+              닫기
+            </button>
           </div>
         </div>
       )}
@@ -89,7 +110,12 @@ const RoomDetail: React.FC<RoomDetailProps> = ({ roomId, initialParticipants }) 
         <div className="progress-percentage">{progress}%</div>
       </div>
 
-      <button onClick={() => setProgress(progress + 10)} className="send-message-button">편지 쓰기</button>
+      <button
+        onClick={() => setProgress(progress + 10)}
+        className="send-message-button"
+      >
+        편지 쓰기
+      </button>
     </div>
   );
 };
