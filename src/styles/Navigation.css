@@ -1,0 +1,32 @@
+/* src/styles/Navigation.css */
+.nav-bar {
+  display: flex; /* 가로로 정렬 */
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 400px;
+  background-color: #f9f6f0;
+  padding: 10px 0;
+  border-top: 1px solid #e0e0e0;
+  box-sizing: border-box;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column; /* 아이콘과 텍스트를 세로로 정렬 */
+  align-items: center;
+  color: #8b8b8b;
+  cursor: pointer;
+  text-align: center;
+}
+
+.icon-placeholder {
+  width: 24px; /* 아이콘 크기 */
+  height: 24px;
+  background-color: #d0d0d0; /* 아이콘의 배경 색 */
+  border-radius: 4px; /* 사각형 모양 */
+  margin-bottom: 4px; /* 아이콘과 텍스트 간격 */
+}

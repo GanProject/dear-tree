@@ -1,0 +1,97 @@
+/* src/styles/RoomList.css */
+body, .room-list {
+  background-color: #f9f6f0;
+  font-family: 'Arial', sans-serif;
+  color: #8b8b8b;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* 방 목록 스타일 */
+.room-container {
+  margin-top: 10px;
+}
+
+.room-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.room-title {
+  font-size: 16px;
+  font-weight: bold;
+  opacity: 0.7;
+}
+
+.delete-button {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* 팝업 스타일 */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.icon-select {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.icon-option {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  border: 1px solid #e0e0e0;
+}
+
+.icon-option.selected {
+  border: 2px solid #8b8b8b;
+}
+
+.create-room-button {
+  background-color: #fce5cd;
+  color: #8b8b8b;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+}
