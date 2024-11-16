@@ -49,11 +49,38 @@
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
+  align-items: flex-start;
 }
 
-.authContainer input {
+.buttonGroup {
   width: 70%;
-  margin: 5px 0;
+  margin: 5px 30px;
+  display: flex;
+  gap: 10px;
+}
+
+.inputGroup {
+  width: 70%;
+  margin: 5px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputGroup label {
+  font-size: 14px;
+}
+
+.inputGroup input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid grey;
+  outline: none;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.inputGroup input:focus {
+  border-bottom: 1px solid black;
 }

@@ -16,8 +16,16 @@ export default function LoginPage() {
         <SmallTree />
         <DearTreeText />
         <div className={styles.authContainer}>
-          <input type="text" placeholder="닉네임" />
-          <input type="password" placeholder="비밀번호" />
+          <div className={styles.buttonGroup}>
+            <button className={styles.active}>로그인</button>
+            <button>회원가입</button>
+          </div>
+          <div className={styles.inputGroup}>
+            <label htmlFor="text">닉네임</label>
+            <input type="text" placeholder="" />
+            <label htmlFor="password">비밀번호</label>
+            <input type="password" placeholder="" />
+          </div>
         </div>
         <button>로그인</button>
       </div>
