@@ -7,11 +7,9 @@ import Link from 'next/link';
 import InitScreen from '@/components/home/InitScreen';
 import ChristmasTree from '@/components/home/ChristmasTree';
 import DearTreeText from '@/components/common/DearTreeText/DearTreeText';
-import InAppBrowserRedirect from '@/components/InAppBrowserRedirect';
 
 export default function HomePage() {
   const [isInitImageVisible, setIsInitImageVisible] = useState(true);
-  const [showRedirect, setShowRedirect] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -23,31 +21,25 @@ export default function HomePage() {
 
   return (
     <>
-      {showRedirect ? (
-        <InAppBrowserRedirect setShowRedirect={setShowRedirect} />
+      {isInitImageVisible ? (
+        <div className={styles.initContainer}>
+          <InitScreen />
+        </div>
       ) : (
-        <>
-          {isInitImageVisible ? (
-            <div className={styles.initContainer}>
-              <InitScreen />
-            </div>
-          ) : (
-            <div className={styles.mainContainer}>
-              <div className={styles.upperContainer}>
-                <ChristmasTree />
-              </div>
-              <div className={styles.bottomContainer}>
-                <DearTreeText />
-                <Link href="/login" passHref>
-                  <button className={styles.button}>로그인</button>
-                </Link>
-                <Link href="/register" passHref>
-                  <button className={styles.button}>회원가입</button>
-                </Link>
-              </div>
-            </div>
-          )}
-        </>
+        <div className={styles.mainContainer}>
+          <div className={styles.upperContainer}>
+            <ChristmasTree />
+          </div>
+          <div className={styles.bottomContainer}>
+            <DearTreeText />
+            <Link href="/login" passHref>
+              <button className={styles.button}>로그인</button>
+            </Link>
+            <Link href="/register" passHref>
+              <button className={styles.button}>회원가입</button>
+            </Link>
+          </div>
+        </div>
       )}
     </>
   );

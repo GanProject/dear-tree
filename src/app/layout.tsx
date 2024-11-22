@@ -1,7 +1,8 @@
+// app/layout.tsx (Server-Side with Client Component)
 import '@/app/globals.css';
-
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import RedirectClient from '@/components/RedirectClient';
 
 const geistSans = localFont({
   src: '../../public/fonts/GeistVF.woff',
@@ -21,9 +22,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <head>
@@ -36,6 +37,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <RedirectClient /> {/* Add the client-side logic here */}
         <div id="phone-view">{children}</div>
       </body>
     </html>
