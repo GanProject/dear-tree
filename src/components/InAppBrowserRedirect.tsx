@@ -71,15 +71,12 @@ export default function InAppBrowserRedirect({
       >
         Safari로 열기
       </button>
-      <div style={{ width: '70%', margin: '50px auto', display: 'block' }}>
-        <Image
-          src="https://tistory3.daumcdn.net/tistory/1893869/skin/images/inappbrowserout.jpeg"
-          alt="Redirect instruction"
-          layout="responsive"
-          width={700}
-          height={400}
-        />
-      </div>
+      <Image
+        src="https://tistory3.daumcdn.net/tistory/1893869/skin/images/inappbrowserout.jpeg"
+        alt="Redirect instruction"
+        width={400}
+        height={300}
+      />
     </div>
   );
 }
