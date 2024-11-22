@@ -50,13 +50,27 @@ export default function RedirectClient() {
         padding: '20px',
         textAlign: 'center',
         zIndex: 9999,
+        overflowY: 'auto', // Allow scrolling for smaller viewports
+        boxSizing: 'border-box', // Include padding in width/height calculations
       }}
     >
-      <h1 style={{ marginBottom: '20px', fontSize: '24px' }}>
+      <h1
+        style={{
+          marginBottom: '20px',
+          fontSize: '24px',
+          wordBreak: 'keep-all', // Prevent word splitting
+        }}
+      >
         해당 페이지는 외부 브라우저에서만 정상적으로 작동합니다.
       </h1>
-      <p style={{ marginBottom: '20px', fontSize: '16px' }}>
-        아래 URL을 복사하여 외부 브라우저에서 열어주세요
+      <p
+        style={{
+          marginBottom: '20px',
+          fontSize: '16px',
+          wordBreak: 'keep-all', // Prevent word splitting
+        }}
+      >
+        아래 URL을 복사하여 외부 브라우저에서 열어주세요.
       </p>
       <textarea
         readOnly
@@ -69,6 +83,7 @@ export default function RedirectClient() {
           padding: '10px',
           border: '1px solid #ccc',
           borderRadius: '5px',
+          resize: 'none', // Prevent resizing in smaller viewports
         }}
       />
       <button
@@ -84,6 +99,7 @@ export default function RedirectClient() {
           border: 'none',
           borderRadius: '5px',
           cursor: 'pointer',
+          wordBreak: 'keep-all', // Prevent text splitting in button
         }}
       >
         URL 복사하기
