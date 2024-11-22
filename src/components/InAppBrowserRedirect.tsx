@@ -13,29 +13,21 @@ export default function InAppBrowserRedirect({
     );
 
     if (isInAppBrowser) {
-      setShowRedirect(true); // Notify the parent to block rendering other content.
+      setShowRedirect(true);
     } else {
-      setShowRedirect(false); // Ensure the rest of the content is visible.
+      setShowRedirect(false);
     }
   }, [setShowRedirect]);
 
-  if (!setShowRedirect) return null; // Do nothing if not in an in-app browser.
+  if (!setShowRedirect) return null;
 
-  const copyToClipboard = (val: string) => {
+  const copyToClipboard = () => {
     const t = document.createElement('textarea');
     document.body.appendChild(t);
-    t.value = val;
+    t.value = window.location.href;
     t.select();
     document.execCommand('copy');
     document.body.removeChild(t);
-  };
-
-  const handleRedirect = () => {
-    copyToClipboard(window.location.href);
-    alert(
-      "URL주소가 복사되었습니다.\n\nSafari가 열리면 주소창을 길게 터치한 뒤, '붙여놓기 및 이동'를 누르면 정상적으로 이용하실 수 있습니다.",
-    );
-    window.location.href = 'x-web-search://?';
   };
 
   return (
@@ -46,16 +38,14 @@ export default function InAppBrowserRedirect({
         padding: '20px',
       }}
     >
-      <h2>인앱브라우저 호환문제로 인해 Safari로 접속해야합니다.</h2>
+      <h2>인앱브라우저 호환문제로 인해 외부브라우저로 접속해야합니다.</h2>
       <p style={{ color: '#999', fontSize: '16px' }}>
-        아래 버튼을 눌러 Safari를 실행해주세요.
+        아래 버튼을 눌러 주소를 복사한 뒤,
         <br />
-        Safari가 열리면, 주소창을 길게 터치한 뒤,
-        <br />
-        &apos;붙여놓기 및 이동&apos;을 누르면 정상적으로 이용할 수 있습니다.
+        외부 브라우저로 붙여넣기하여 이용해주세요.
       </p>
       <button
-        onClick={handleRedirect}
+        onClick={copyToClipboard}
         style={{
           minWidth: '180px',
           marginTop: '10px',
@@ -68,7 +58,7 @@ export default function InAppBrowserRedirect({
           border: 'none',
         }}
       >
-        Safari로 열기
+        Dear Tree 주소 복사하기
       </button>
       <img
         style={{ width: '70%', margin: '50px auto', display: 'block' }}
