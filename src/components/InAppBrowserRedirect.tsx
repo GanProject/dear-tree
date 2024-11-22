@@ -28,6 +28,7 @@ export default function InAppBrowserRedirect({
     t.select();
     document.execCommand('copy');
     document.body.removeChild(t);
+    alert('주소가 복사되었습니다.');
   };
 
   return (
@@ -38,7 +39,7 @@ export default function InAppBrowserRedirect({
         padding: '20px',
       }}
     >
-      <h2>인앱브라우저 호환문제로 인해 외부브라우저로 접속해야합니다.</h2>
+      <h3>인앱브라우저 호환문제로 인해 외부브라우저로 접속해야합니다.</h3>
       <p style={{ color: '#999', fontSize: '16px' }}>
         아래 버튼을 눌러 주소를 복사한 뒤,
         <br />
@@ -58,7 +59,7 @@ export default function InAppBrowserRedirect({
           border: 'none',
         }}
       >
-        Dear Tree 주소 복사하기
+        주소 복사
       </button>
       <img
         style={{ width: '70%', margin: '50px auto', display: 'block' }}

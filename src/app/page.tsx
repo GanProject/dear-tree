@@ -23,8 +23,9 @@ export default function HomePage() {
 
   return (
     <>
-      <InAppBrowserRedirect setShowRedirect={setShowRedirect} />
-      {!showRedirect && (
+      {showRedirect ? (
+        <InAppBrowserRedirect setShowRedirect={setShowRedirect} />
+      ) : (
         <>
           {isInitImageVisible ? (
             <div className={styles.initContainer}>
