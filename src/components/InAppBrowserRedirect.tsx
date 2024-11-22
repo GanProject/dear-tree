@@ -74,8 +74,10 @@ export default function InAppBrowserRedirect({
       <Image
         src="https://tistory3.daumcdn.net/tistory/1893869/skin/images/inappbrowserout.jpeg"
         alt="Redirect instruction"
-        width={400}
-        height={300}
+        width={700} // Adjust to your desired width
+        height={400} // Adjust to your desired height
+        style={{ width: '70%', margin: '50px auto', display: 'block' }}
+        priority // Optional: Ensures the image loads quickly
       />
     </div>
   );
