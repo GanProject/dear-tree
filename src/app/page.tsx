@@ -24,7 +24,6 @@ export default function HomePage() {
       {isInitImageVisible ? (
         <div className={styles.initContainer}>
           <InitScreen />
-          <p className={styles.initLoadingText}>Loading...</p>
         </div>
       ) : (
         <div className={styles.mainContainer}>
