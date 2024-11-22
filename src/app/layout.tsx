@@ -1,6 +1,7 @@
-import type { Metadata } from 'next';
-import localFont from 'next/font/local';
 import './globals.css';
+
+import type { Metadata, Viewport } from 'next';
+import localFont from 'next/font/local';
 
 const geistSans = localFont({
   src: '../../public/fonts/GeistVF.woff',
@@ -16,6 +17,13 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: 'Dear Tree',
   description: 'Merry Christmas!',
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  maximumScale: 1,
+  minimumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({
