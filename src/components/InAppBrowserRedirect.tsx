@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import Image from 'next/image';
 
 type InAppBrowserRedirectProps = {
   setShowRedirect: (value: boolean) => void;
@@ -71,13 +70,10 @@ export default function InAppBrowserRedirect({
       >
         Safari로 열기
       </button>
-      <Image
+      <img
+        style={{ width: '70%', margin: '50px auto', display: 'block' }}
         src="https://tistory3.daumcdn.net/tistory/1893869/skin/images/inappbrowserout.jpeg"
         alt="Redirect instruction"
-        width={700} // Adjust to your desired width
-        height={400} // Adjust to your desired height
-        style={{ width: '70%', margin: '50px auto', display: 'block' }}
-        priority // Optional: Ensures the image loads quickly
       />
     </div>
   );
