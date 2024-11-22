@@ -7,7 +7,6 @@ import Link from 'next/link';
 import InitScreen from '@/components/home/InitScreen';
 import ChristmasTree from '@/components/home/ChristmasTree';
 import DearTreeText from '@/components/common/DearTreeText/DearTreeText';
-import InAppBrowserRedirect from '@/components/InAppBrowserRedirect';
 
 export default function HomePage() {
   const [isInitImageVisible, setIsInitImageVisible] = useState(true);
@@ -22,7 +21,6 @@ export default function HomePage() {
 
   return (
     <>
-      <InAppBrowserRedirect />
       {isInitImageVisible ? (
         <div className={styles.initContainer}>
           <InitScreen />

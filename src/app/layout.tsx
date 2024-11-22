@@ -1,3 +1,4 @@
+import InAppBrowserRedirect from '@/components/InAppBrowserRedirect';
 import './globals.css';
 
 import type { Metadata } from 'next';
@@ -36,6 +37,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <InAppBrowserRedirect />
         <div id="phone-view">{children}</div>
       </body>
     </html>
