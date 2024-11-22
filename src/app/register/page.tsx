@@ -30,7 +30,10 @@ export default function LoginPage() {
             <label htmlFor="text">닉네임</label>
             <input type="text" placeholder="" />
             <label htmlFor="password">비밀번호</label>
-            <input type="password" placeholder="" />
+            <div className={styles.passwordInput}>
+              <input type="password" placeholder="" />
+              <button className={styles.reTypeButton}>재입력</button>
+            </div>
           </div>
         </div>
         <button className={styles.loginButton}>회원가입</button>

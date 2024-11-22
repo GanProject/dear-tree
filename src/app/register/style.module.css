@@ -112,6 +112,30 @@
   border-bottom: 1px solid black;
 }
 
+.passwordInput {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+
+.reTypeButton {
+  width: 30%;
+  padding: 5px;
+  background-color: #ffe0b8;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'nanum junghagsaeng';
+  font-size: 20px;
+}
+
+.reTypeButton:hover {
+  background-color: #ffc57a;
+}
+
 .loginButton {
   width: 60%;
   padding: 5px;
