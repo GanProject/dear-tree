@@ -1,17 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import Image from 'next/image';
 
-export default function InAppBrowserRedirect() {
-  const [showRedirect, setShowRedirect] = useState(false);
+type InAppBrowserRedirectProps = {
+  setShowRedirect: (value: boolean) => void;
+};
 
+export default function InAppBrowserRedirect({
+  setShowRedirect,
+}: InAppBrowserRedirectProps) {
   useEffect(() => {
     const isInAppBrowser = navigator.userAgent.match(
       /inapp|NAVER|KAKAOTALK|Snapchat|Line|WirtschaftsWoche|Thunderbird|Instagram|everytimeApp|WhatsApp|Electron|wadiz|AliApp|zumapp|iPhone(.*)Whale|Android(.*)Whale|kakaostory|band|twitter|DaumApps|DaumDevice\/mobile|FB_IAB|FB4A|FBAN|FBIOS|FBSS|SamsungBrowser\/[^1]/i,
     );
 
     if (isInAppBrowser) {
-      setShowRedirect(true);
+      setShowRedirect(true); // Notify the parent to block rendering other content.
+    } else {
+      setShowRedirect(false); // Ensure the rest of the content is visible.
     }
-  }, []);
+  }, [setShowRedirect]);
+
+  if (!setShowRedirect) return null; // Do nothing if not in an in-app browser.
 
   const copyToClipboard = (val: string) => {
     const t = document.createElement('textarea');
@@ -29,10 +38,6 @@ export default function InAppBrowserRedirect() {
     );
     window.location.href = 'x-web-search://?';
   };
-
-  if (!showRedirect) {
-    return null; // Render nothing if not in an in-app browser.
-  }
 
   return (
     <div
@@ -66,11 +71,15 @@ export default function InAppBrowserRedirect() {
       >
         Safari로 열기
       </button>
-      <img
-        style={{ width: '70%', margin: '50px auto', display: 'block' }}
-        src="https://tistory3.daumcdn.net/tistory/1893869/skin/images/inappbrowserout.jpeg"
-        alt="Redirect instruction"
-      />
+      <div style={{ width: '70%', margin: '50px auto', display: 'block' }}>
+        <Image
+          src="https://tistory3.daumcdn.net/tistory/1893869/skin/images/inappbrowserout.jpeg"
+          alt="Redirect instruction"
+          layout="responsive"
+          width={700}
+          height={400}
+        />
+      </div>
     </div>
   );
 }

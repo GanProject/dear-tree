@@ -11,6 +11,7 @@ import InAppBrowserRedirect from '@/components/InAppBrowserRedirect';
 
 export default function HomePage() {
   const [isInitImageVisible, setIsInitImageVisible] = useState(true);
+  const [showRedirect, setShowRedirect] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -22,26 +23,30 @@ export default function HomePage() {
 
   return (
     <>
-      <InAppBrowserRedirect />
-      {isInitImageVisible ? (
-        <div className={styles.initContainer}>
-          <InitScreen />
-        </div>
-      ) : (
-        <div className={styles.mainContainer}>
-          <div className={styles.upperContainer}>
-            <ChristmasTree />
-          </div>
-          <div className={styles.bottomContainer}>
-            <DearTreeText />
-            <Link href="/login" passHref>
-              <button className={styles.button}>로그인</button>
-            </Link>
-            <Link href="/register" passHref>
-              <button className={styles.button}>회원가입</button>
-            </Link>
-          </div>
-        </div>
+      <InAppBrowserRedirect setShowRedirect={setShowRedirect} />
+      {!showRedirect && (
+        <>
+          {isInitImageVisible ? (
+            <div className={styles.initContainer}>
+              <InitScreen />
+            </div>
+          ) : (
+            <div className={styles.mainContainer}>
+              <div className={styles.upperContainer}>
+                <ChristmasTree />
+              </div>
+              <div className={styles.bottomContainer}>
+                <DearTreeText />
+                <Link href="/login" passHref>
+                  <button className={styles.button}>로그인</button>
+                </Link>
+                <Link href="/register" passHref>
+                  <button className={styles.button}>회원가입</button>
+                </Link>
+              </div>
+            </div>
+          )}
+        </>
       )}
     </>
   );
