@@ -19,13 +19,6 @@ export const metadata: Metadata = {
   description: 'Merry Christmas!',
 };
 
-export const viewport: Viewport = {
-  width: 'device-width',
-  maximumScale: 1,
-  minimumScale: 1,
-  userScalable: false,
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
