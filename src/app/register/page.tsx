@@ -4,7 +4,7 @@ import Link from 'next/link';
 import SmallTree from '@/components/auth/SmallTree';
 import DearTreeText from '@/components/common/DearTreeText/DearTreeText';
 
-export default function RegisterPage() {
+export default function LoginPage() {
   return (
     <div className={styles.mainContainer}>
       <header className={styles.header}>
@@ -16,10 +16,18 @@ export default function RegisterPage() {
         <SmallTree />
         <DearTreeText />
         <div className={styles.authContainer}>
-          <input type="text" placeholder="닉네임" />
-          <input type="password" placeholder="비밀번호" />
+          <div className={styles.buttonGroup}>
+            <button>로그인</button>
+            <button className={styles.activeButton}>회원가입</button>
+          </div>
+          <div className={styles.inputGroup}>
+            <label htmlFor="text">닉네임</label>
+            <input type="text" placeholder="" />
+            <label htmlFor="password">비밀번호</label>
+            <input type="password" placeholder="" />
+          </div>
         </div>
-        <button>회원가입</button>
+        <button className={styles.loginButton}>회원가입</button>
       </div>
       <div />
     </div>

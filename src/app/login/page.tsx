@@ -17,7 +17,7 @@ export default function LoginPage() {
         <DearTreeText />
         <div className={styles.authContainer}>
           <div className={styles.buttonGroup}>
-            <button className={styles.active}>로그인</button>
+            <button className={styles.activeButton}>로그인</button>
             <button>회원가입</button>
           </div>
           <div className={styles.inputGroup}>
@@ -27,7 +27,7 @@ export default function LoginPage() {
             <input type="password" placeholder="" />
           </div>
         </div>
-        <button>로그인</button>
+        <button className={styles.loginButton}>로그인</button>
       </div>
       <div />
     </div>

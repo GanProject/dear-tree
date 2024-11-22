@@ -1,11 +1,14 @@
+@font-face {
+  font-family: 'nanum junghagsaeng';
+  src: url('/fonts/nanum-junghagsaeng.ttf') format('truetype');
+}
+
 .mainContainer {
   height: 100vh;
   width: 100%;
-
   background-image: url('/img/background.png');
   background-size: cover;
   background-position: center;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,6 +30,7 @@
 }
 
 .backLink:hover {
+  cursor: pointer;
   color: #0070f3;
 }
 
@@ -38,14 +42,14 @@
 }
 
 .authContainer {
-  width: 90%;
-  aspect-ratio: 16/9;
-  padding: 20px;
+  width: 380px;
+  height: 300px;
+  padding: 10px;
 
   background-image: url('/img/auth_container.png');
   background-size: contain;
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: center;
 
   display: flex;
   flex-direction: column;
@@ -53,14 +57,74 @@
   align-items: flex-start;
 }
 
-.authContainer input {
-  width: 70%;
-  margin: 5px 30px;
-}
-
 .buttonGroup {
   width: 70%;
-  margin: 5px 30px;
+  margin: 20px 0 0 20px;
   display: flex;
   gap: 10px;
+}
+
+.buttonGroup button {
+  width: 30%;
+  padding: 5px 10px;
+  background-color: #ffe7c7;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'nanum junghagsaeng';
+  font-size: 24px;
+}
+
+.buttonGroup .activeButton {
+  background-color: #ffe0b8;
+  box-shadow: 0px 5px 5px rgba(35, 34, 34, 0.192);
+}
+
+.buttonGroup button:hover {
+  background-color: #ffc57a;
+}
+
+.inputGroup {
+  width: 70%;
+  margin: 0 30px 20px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inputGroup label {
+  font-family: 'nanum junghagsaeng';
+  font-size: 20px;
+}
+
+.inputGroup input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid grey;
+  outline: none;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.inputGroup input:focus {
+  border-bottom: 1px solid black;
+}
+
+.loginButton {
+  width: 60%;
+  padding: 5px;
+  background-color: #bf2d2e;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-family: 'nanum junghagsaeng';
+  font-size: 24px;
+  box-shadow: 0px 5px 5px rgba(35, 34, 34, 0.192);
+}
+
+.loginButton:hover {
+  background-color: #ffc57a;
+  color: black;
 }
